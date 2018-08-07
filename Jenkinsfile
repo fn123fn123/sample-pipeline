@@ -9,13 +9,7 @@ podTemplate(label: 'mypod', containers: [
     node('mypod') {
 
         stage('sample Docker work') {
-            container('docker') {
-
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', 
-                        credentialsId: 'dockerhub',
-                        usernameVariable: 'DOCKER_HUB_USER', 
-                        passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
-                    
+            container('docker') {                 
                     sh "docker run hello-world"
                 }
             }
@@ -23,13 +17,11 @@ podTemplate(label: 'mypod', containers: [
 
         stage('do some kubectl work') {
             container('kubectl') {
-
                     sh "kubectl get nodes"
             }
         }
         stage('do some helm work') {
             container('helm') {
-
                sh "helm ls"
             }
         }
