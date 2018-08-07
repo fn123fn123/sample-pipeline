@@ -21,7 +21,7 @@ podTemplate(label: 'mypod', containers: [
         }
         stage('do some helm work') {
             container('helm') {
-               sh "helm ls"
+               sh "helm version"
             }
         }
     }
