@@ -25,7 +25,6 @@ podTemplate(label: 'mypod', containers: [
             container('kubectl') {
 
                     sh "kubectl get nodes"
-                }
             }
         }
         stage('do some helm work') {
