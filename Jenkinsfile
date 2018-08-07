@@ -11,7 +11,6 @@ podTemplate(label: 'mypod', containers: [
         stage('sample Docker work') {
             container('docker') {                 
                     sh "docker run hello-world"
-                }
             }
         }
 
